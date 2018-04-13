@@ -1,10 +1,10 @@
 class PigLatinizer
 
-  #attr_accessor :text
+  attr_accessor :text
 
-  #def initialize(text = nil)
-  #  @text = text
-  #end
+  def initialize(text = nil)
+    @text = text
+  end
 
   def piglatinize(text)
     # I was having trouble understanding the semantics of pig latin so i will develop my own code when i come back to it.
