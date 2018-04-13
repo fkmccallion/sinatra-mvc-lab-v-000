@@ -13,7 +13,6 @@ class PigLatinizer
         text_arr.each do |word|
           word_arr = word.scan(/\w/) # converts word into an array of characters
           if word_arr.first.scan(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]+/).size > 0
-                      binding.pry
             c_str = word.scan(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]+/).first
             word_str = word.sub!(c_str, "")
             result << word_str + c_str + "ay"
