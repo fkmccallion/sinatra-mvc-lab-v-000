@@ -17,6 +17,7 @@ class PigLatinizer
             word_str = word.sub!(c_str, "")
             result << word_str + c_str + "ay"
           else
+            binding.pry
             result << word + "way"
           end
         end
