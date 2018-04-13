@@ -7,17 +7,19 @@ class PigLatinizer
   #end
 
   def piglatinize(text)
+
     # I was having trouble understanding the semantics of pig latin so i will develop my own code when i come back to it.
-    text_arr = text.split(" ")
+
+    text_arr = text.split(" ") # creates array of words from the text string
         result = []
         text_arr.each do |word|
           word_arr = word.scan(/\w/) # converts word into an array of characters
-          if word_arr.first.scan(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]+/).size > 0
+          if word_arr.first.scan(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]+/).size > 0 # detects if first letter is a vowel
             c_str = word.scan(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]+/).first
+            binding.pry
             word_str = word.sub!(c_str, "")
             result << word_str + c_str + "ay"
           else
-            binding.pry
             result << word + "way"
           end
         end
