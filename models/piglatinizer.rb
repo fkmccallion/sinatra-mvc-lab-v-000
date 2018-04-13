@@ -15,8 +15,7 @@ class PigLatinizer
         text_arr.each do |word|
           word_arr = word.scan(/\w/) # converts word into an array of characters
           if word_arr.first.scan(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]+/).size > 0 # detects if first letter is a vowel
-            c_str = word.scan(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]+/).first
-            binding.pry
+            c_str = word.scan(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]+/).first # research later: all consonants before the first vowel of the word are shifted to the end of the word????
             word_str = word.sub!(c_str, "")
             result << word_str + c_str + "ay"
           else
